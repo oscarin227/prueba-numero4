@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Consumo de Combustible</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #e8f5e9; /* Fondo verde claro */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 0;
+            padding: 20px;
+        }
+        h1 {
+            color: #388e3c; /* Color verde oscuro */
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
+        }
+        label {
+            margin-right: 10px;
+            font-size: 18px;
+            color: #2e7d32; /* Color verde más oscuro */
+        }
+        input[type="number"] {
+            padding: 12px;
+            margin: 5px;
+            font-size: 18px;
+            border: 2px solid #2e7d32; /* Color verde oscuro */
+            border-radius: 8px;
+            width: 220px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        button {
+            background-color: #43a047; /* Color verde brillante */
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            font-size: 18px;
+            border-radius: 8px;
+            cursor: pointer;
+            margin-top: 10px;
+            transition: background-color 0.3s ease;
+        }
+        button:hover {
+            background-color: #2e7d32; /* Color verde oscuro al pasar el ratón */
+        }
+        #resultado {
+            margin-top: 20px;
+            padding: 15px;
+            border: 2px solid #2e7d32; /* Color verde oscuro */
+            border-radius: 8px;
+            background-color: #ffffff; /* Fondo blanco */
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            text-align: center;
+            color: #2e7d32; /* Color verde más oscuro */
+        }
+        p {
+            margin: 10px 0;
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Consumo de Combustible por Kilómetro</h1>
+    
+    <label for="litros">Número de litros consumidos:</label>
+    <input type="number" id="litros" placeholder="Ingrese litros" step="0.01">
+    
+    <label for="kilometros">Número de kilómetros recorridos:</label>
+    <input type="number" id="kilometros" placeholder="Ingrese kilómetros" step="0.1">
+    
+    <button onclick="calcularConsumo()">Calcular Consumo</button>
+    
+    <div id="resultado"></div>
+    
+    <script>
+        function calcularConsumo() {
+            // Obtener los valores de los inputs
+            let litros = parseFloat(document.getElementById('litros').value);
+            let kilometros = parseFloat(document.getElementById('kilometros').value);
+            
+            // Validar que los valores sean positivos y diferentes de cero
+            if (litros <= 0 || kilometros <= 0) {
+                document.getElementById('resultado').innerHTML = "Por favor, ingrese valores válidos (mayores que cero).";
+                return;
+            }
+            
+            // Calcular el consumo de combustible por kilómetro
+            let consumoPorKilometro = litros / kilometros;
+            
+            // Mostrar el resultado
+            document.getElementById('resultado').innerHTML = `
+                <p>Has consumido ${consumoPorKilometro.toFixed(2)} litros por kilómetro.</p>
+            `;
+        }
+    </script>
+</body>
+</html>

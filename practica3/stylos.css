@@ -1,0 +1,67 @@
+body {
+    background-color: rgb(101, 155, 39);
+    margin: 0;
+    padding-top: 0px;
+}
+header{
+    padding-top: 0px;
+    height: ;
+    text-align: center;
+    color: rgb(5, 5, 5);
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    
+}
+nav{
+    background-color: white;
+    height: 25px;
+}
+nav a {
+    color: chocolate;
+    padding-left: 20px;
+    text-decoration: none;
+    vertical-align: middle;
+}
+
+
+nav a:hover{
+    color: blue;
+}
+.tarjeta{
+    text-align: center;
+    width: 22%;
+    border:  1px solid white;
+    border-radius: 25px;
+    padding: 10px;
+    background-color:blueviolet;
+    box-shadow: o 2px 5px rgba(138, 34, 34, 0.5);
+    margin: 5px;
+    
+}
+
+@media (max-width : 1090px){
+    .tarjeta{
+        width: 30%;
+    }
+}
+@media(max-width: 920px){
+    .tarjeta{
+        width: 46%;
+    }
+}
+@media(max-width: 820px){
+    .tarjeta{
+        width: 98%;
+    }
+}
+
+.tarjeta img{
+    width: 50%;
+    
+}
+.tarjeta-contenedor{
+    display: flex;
+    padding: 20px;
+    flex-wrap: wrap;
+    
+
+}

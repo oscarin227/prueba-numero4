@@ -1,0 +1,147 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Río Guallagas del Perú</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/estilos.css">
+    <style>
+        body {
+            background-color: #f8f9fa;
+            color: #333;
+        }
+
+        header {
+            margin-bottom: 30px;
+        }
+
+        footer {
+            margin-top: 30px;
+        }
+
+        .card {
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .card-title {
+            color: #dc3545; /* Rojo */
+        }
+
+        .card-text {
+            color: #333;
+        }
+
+        .btn-custom {
+            border-radius: 20px;
+            padding: 10px 20px;
+            font-size: 16px;
+            color: #fff;
+        }
+
+        .btn-verde {
+            background-color: #28a745;
+        }
+
+        .btn-amarillo {
+            background-color: #ffc107;
+        }
+
+        .btn-rojo {
+            background-color: #dc3545;
+        }
+
+        .btn-blanco {
+            background-color: #fff;
+            color: #333;
+            border: 1px solid #ccc;
+        }
+
+        .product-card {
+            margin: 20px;
+        }
+
+        .text-center {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <a class="navbar-brand" href="#">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Flag_of_Peru.svg/1280px-Flag_of_Peru.svg.png" alt="Bandera de Perú" class="mr-2" width="30">
+                Río Guallagas del Perú
+            </a>
+        </nav>
+    </header>
+    <main class="container mt-5">
+        <h1 class="text-center mb-4">Productos Peruanos</h1>
+        <div class="row mb-4">
+            <div class="col-md-12 text-center">
+                <button class="btn btn-custom btn-verde m-2" id="show-product">Mostrar Producto</button>
+                <button class="btn btn-custom btn-amarillo m-2" id="select-product">Seleccionar Producto</button>
+                <button class="btn btn-custom btn-rojo m-2" id="show-price">Mostrar Precio</button>
+                <button class="btn btn-custom btn-blanco m-2" id="clear-all">Borrar Todo</button>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12 text-center" id="product-container">
+                <!-- Los productos se mostrarán aquí -->
+            </div>
+        </div>
+    </main>
+    <footer class="bg-dark text-white text-center py-3">
+        <p>&copy; 2024 Río Guallagas del Perú. Todos los derechos reservados.</p>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            const products = [
+                { name: "Rocoto", code: "001", price: "$5.00" },
+                { name: "Ají Amarillo", code: "002", price: "$4.00" },
+                { name: "Ají Panca", code: "003", price: "$3.50" },
+                { name: "Chicha Morada", code: "004", price: "$6.00" },
+                { name: "Quinua", code: "005", price: "$7.00" },
+                { name: "Maíz", code: "006", price: "$4.50" },
+                { name: "Pallares", code: "007", price: "$11.00" }
+            ];
+            
+            function renderProducts(products, showPrice = false) {
+                let html = '';
+                products.forEach(product => {
+                    html += `
+                        <div class="card product-card">
+                            <div class="card-body">
+                                <h5 class="card-title">${product.name}</h5>
+                                ${showPrice ? `<p class="card-text">Precio: ${product.price}</p>` : `<p class="card-text">Código: ${product.code}</p>`}
+                            </div>
+                        </div>`;
+                });
+                $('#product-container').html(html);
+            }
+
+            $('#show-product').click(function() {
+                renderProducts(products);
+            });
+
+            $('#select-product').click(function() {
+                $('#product-container').html('<h3>Selecciona un producto para ver los detalles</h3>');
+            });
+
+            $('#show-price').click(function() {
+                renderProducts(products, true);
+            });
+
+            $('#clear-all').click(function() {
+                $('#product-container').empty();
+            });
+        });
+    </script>
+</body>
+</html>

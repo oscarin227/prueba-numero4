@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Consulta Feriados y Clima en Chile</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #e0f7da;
+      padding: 20px;
+    }
+
+    h1 {
+      text-align: center;
+      color: #1e88e5;
+      background-color: #81c784;
+      padding: 15px;
+      border-radius: 5px;
+    }
+
+    table {
+      width: 100%;
+      margin-top: 20px;
+      border-collapse: collapse;
+    }
+
+    th, td {
+      padding: 10px;
+      border: 1px solid #ddd;
+    }
+
+    th {
+      background-color: #64b5f6;
+      color: white;
+    }
+
+    button {
+      margin-top: 20px;
+      padding: 10px;
+      background-color: #0288d1;
+      color: white;
+      border: none;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+
+    button:hover {
+      background-color: #0277bd;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Consulta Feriados y Clima en Chile</h1>
+
+  <h2>Feriados en Chile</h2>
+  <button onclick="fetchFeriados()">Consultar Feriados</button>
+  <table id="feriadosTable">
+    <thead>
+      <tr>
+        <th>Fecha</th>
+        <th>Nombre del Feriado</th>
+        <th>tipo</th>
+        
+      </tr>
+    </thead>
+    <tbody></tbody>
+  </table>
+
+  <h2>Clima en Santiago, Chile</h2>
+  <button onclick="fetchClima()">Consultar Clima</button>
+  <div id="weatherInfo"></div>
+ <script src="script.js"></script>
+ 
+</body>
+</html>

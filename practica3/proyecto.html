@@ -1,0 +1,113 @@
+
+
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="stylos.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <title>Proyecto</title>
+</head>
+<body>
+    <header class="text-center p-4 bg-danger text-white">
+        <h1>TIENDA PATITO LOCO</h1>
+    </header>
+    <nav class="navbar navbar-expand-lg navbar-success bg-success">
+        <div class="container-fluid">
+            <a class="navbar-brand text-white" href="#">Tienda</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+                
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="#nosotros">Nosotros</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="#pedidos">Pedidos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="#contacto">Contacto</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="container my-4">
+        <div id="nosotros" class="mb-5">
+            <h2>Nosotros</h2>
+            <p>Información sobre la tienda Patito Loco... somos una tienda de ventas y compras de aparatos tecnológicos.</p>
+        </div>
+        <div id="pedidos" class="mb-5">
+            <h2>Pedidos</h2>
+            <div class="row">
+                <div class="col-md-3 mb-3">
+                    <div class="card h-100 border-primary">
+                        <img src="imagen/computadora.jpg" class="card-img-top" alt="Computadora">
+                        <div class="card-body">
+                            <h5 class="card-title">COMPUTADORA</h5>
+                            <p class="card-text">Es la mejor computadora del mercado.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 mb-3">
+                    <div class="card h-100 border-primary">
+                        <img src="imagen/lentes.jpg" class="card-img-top" alt="Lentes">
+                        <div class="card-body">
+                            <h5 class="card-title">LENTES</h5>
+                            <p class="card-text">Es la mejor lente de realidad virtual del mercado.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 mb-3">
+                    <div class="card h-100 border-primary">
+                        <img src="imagen/mouse.jpg" class="card-img-top" alt="Mouse">
+                        <div class="card-body">
+                            <h5 class="card-title">MOUSE</h5>
+                            <p class="card-text">Es el mejor mouse del mercado, dentro de nuestro país y el extranjero.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 mb-3">
+                    <div class="card h-100 border-primary">
+                        <img src="imagen/teclado.jpg" class="card-img-top" alt="Teclado">
+                        <div class="card-body">
+                            <h5 class="card-title">TECLADO</h5>
+                            <p class="card-text">Es el mejor teclado del mercado, dentro de nuestro país y el extranjero.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="contacto">
+            <h2>Contacto</h2>
+            <p>Información de contacto de la tienda Patito Loco:</p>
+            <p><strong>Correo Electrónico:</strong> oscar.malulin@gmail.com</p>
+            <p><strong>Teléfono:</strong> 123456789</p>
+            <p><strong>Dirección:</strong> Calle mucho gusto 123, Ciudad Concepción, País Chile</p>
+            <h3>Formulario de Contacto</h3>
+            <form action="tu_script_de_envio.php" method="POST">
+                <div class="mb-3">
+                    <label for="nombre" class="form-label">Nombre</label>
+                    <input type="text" class="form-control" id="nombre" name="nombre" required>
+                </div>
+                <div class="mb-3">
+                    <label for="correo" class="form-label">Correo Electrónico</label>
+                    <input type="email" class="form-control" id="correo" name="correo" required>
+                </div>
+                <div class="mb-3">
+                    <label for="mensaje" class="form-label">Mensaje</label>
+                    <textarea class="form-control" id="mensaje" name="mensaje" rows="3" required></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">Enviar</button>
+            </form>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.2/js/bootstrap.min.js"></script>
+</body>
+</html>

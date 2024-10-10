@@ -1,0 +1,146 @@
+
+@media screen and (max-width:1024px){
+    .ofertas, .navbar_contact,.telefono,.saludotd .cuenta,.Yenifer{
+        display: none;
+    }
+    .banner{
+        width:100%;
+        padding: 0px;
+    }
+   
+    .buscar{
+        width:100%;
+        margin-left: 84px
+    }
+
+    .producto ul{
+        padding: 0px;
+    }
+    .imgProduct{
+        position: absolute;
+        right: 60px;
+    }
+    .description-Ref{
+        color:#17296C;
+        font-family: Verdana,sans-serif !important;
+        /* margin-left: 320px; */
+        position: absolute; 
+        top: 10px; 
+        margin-left: 185px;
+        width: 100%;
+    }
+}
+@media screen and (max-width: 767px){
+  
+    .ofertas, .navbar_contact,.telefono,.saludotd .cuenta,.Yenifer{
+        display: none;
+    }
+    .banner{
+        width:100%;
+        padding: 0px;
+    }
+   
+    .buscar{
+        width:100%;
+        margin-left: 84px
+    }
+
+    .products{
+        display: inherit;
+    }
+
+    .producto ul li{
+        display: inline;
+       padding: 0px;
+    }
+    .producto ul{
+        padding: 0px;
+        position: absolute;
+        /* bottom: 40px;
+        right: 0px; */
+        top: 680px;
+        margin-left: 30px;
+    }
+    .rows{
+        display: inline;
+    }
+    .description{
+        width: 100%;
+        margin-top: 160px;
+    }
+   .botones{
+       padding: 0px;
+   }
+   .cajaCantidad{
+       width: 100%;
+   }
+   .descripcion-producto ul{
+       padding: 0px;
+   }
+ 
+   .content ul{
+       margin: 10px;
+   }
+   .imgProduct{
+       margin: 0px;
+   }
+ 
+   .rows-celular1,
+   .rows-celular2,
+   .rows-celular3,
+   .rows-celular4{
+       padding: 10px;
+   }
+   /* .imgBanner ul{
+       padding: 10px;
+   } */
+
+   .imgBanner{
+       display: inherit;
+   }
+   .cero1P{
+    margin-left: 20px;
+}
+.cero1 {
+    padding-left: 90px;
+}
+ .content{
+     width: 90%;
+     /* padding: 0px; */
+     margin:0px; 
+ }
+ .description-Ref{
+     /* position: absolute; */
+    width: 100%;
+    margin-top: 560px;
+   right: -11px;
+
+ }
+ .content-footer{
+    display: inline;
+}
+
+
+}
+
+
+@media screen and (max-width: 480px){
+    /* body{
+
+    } */
+    }
+@media screen and (max-width: 320px){
+    .banner{
+        width:100%;
+        padding: 0px;
+    }
+   
+    .buscar{
+        width:100%;
+        margin-left: 84px
+    }
+    .producto{
+        padding: 0px;
+    }
+    
+    }

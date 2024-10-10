@@ -1,0 +1,73 @@
+<<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Productos</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: center;
+        }
+        th {
+            background-color: #f4f4f4;
+        }
+        input[type="text"] {
+            width: calc(100% - 22px);
+            padding: 5px;
+        }
+        button {
+            margin-top: 10px;
+            padding: 5px 10px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h2>Lista de Productos</h2>
+    <table>
+        <tr>
+            <th>Producto</th>
+            <th>Precio</th>
+        </tr>
+        <tr>
+            <td>Producto 1</td>
+            <td>$10</td>
+        </tr>
+        <tr>
+            <td>Producto 2</td>
+            <td>$20</td>
+        </tr>
+        <tr>
+            <td>Producto 3</td>
+            <td>$30</td>
+        </tr>
+    </table>
+
+    <label for="producto">Producto a llevar:</label>
+    <input type="text" id="producto" placeholder="Escribe el nombre del producto"><br>
+
+    <button onclick="confirmarProducto()">Confirmar</button>
+    <button onclick="cancelarProducto()">Cancelar</button>
+
+    <script>
+        function confirmarProducto() {
+            alert("Has elegido: " + document.getElementById("producto").value);
+        }
+
+        function cancelarProducto() {
+            document.getElementById("producto").value = '';
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,81 @@
+data = [{
+    "nombre4": "Samsung1",
+    "referencia4": "REF. 203942935-0",
+    "foto": "modal.png"
+}, {
+    "nombre4": "Samsung2",
+    "referencia4": "REF. 203942935-1",
+    "foto": "producto.png"
+}, {
+    "nombre4": "Samsung2",
+    "referencia4": "REF. 203942935-1",
+    "foto": "producto.png"
+}, {
+    "nombre4": "Samsung2",
+    "referencia4": "REF. 203942935-1",
+    "foto": "producto.png"
+}, {
+    "nombre4": "Samsung1",
+    "referencia4": "REF. 203942935-0",
+    "foto": "modal.png"
+}, {
+    "nombre4": "Samsung2",
+    "referencia4": "REF. 203942935-1",
+    "foto": "producto.png"
+}, {
+    "nombre4": "Samsung2",
+    "referencia4": "REF. 203942935-1",
+    "foto": "producto.png"
+}, {
+    "nombre4": "Samsung2",
+    "referencia4": "REF. 203942935-1",
+    "foto": "producto.png"
+}, {
+    "nombre": "Samsung",
+    "referencia": "REF. 90871043-1",
+    "foto": "producto.png"
+}, {
+    "nombre4": "Samsung2",
+    "referencia4": "REF. 203942935-1",
+    "foto": "producto.png"
+}, {
+    "nombre11": "Samsung2",
+    "referencia11": "REF. 682151820-9",
+    "foto": "producto2.png"
+}, {
+    "nombre4": "Samsung2",
+    "referencia4": "REF. 203942935-1",
+    "foto": "producto.png"
+}, {
+    "nombre4": "Samsung2",
+    "referencia4": "REF. 203942935-1",
+    "foto": "producto.png"
+}, {
+    "nombre4": "Samsung2",
+    "referencia4": "REF. 203942935-1",
+    "foto": "producto.png"
+}, {
+    "nombre4": "Samsung2",
+    "referencia4": "REF. 203942935-1",
+    "foto": "producto.png"
+}, {
+    "nombre4": "Samsung2",
+    "referencia4": "REF. 203942935-1",
+    "foto": "producto.png"
+}, {
+    "nombre4": "Samsung2",
+    "referencia4": "REF. 203942935-1",
+    "foto": "producto.png"
+}, {
+    "nombre4": "Samsung2",
+    "referencia4": "REF. 90871043-1",
+    "foto": "producto.png"
+}, {
+    "nombre4": "Samsung2",
+    "referencia4": "REF. 203942935-1",
+    "foto": "producto.png"
+}, {
+    "nombre4": "Samsung2",
+    "referencia4": "REF. 203942935-1",
+    "foto": "producto.png"
+}];

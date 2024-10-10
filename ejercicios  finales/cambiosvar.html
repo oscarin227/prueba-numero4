@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Intercambiar Variables</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 0;
+            padding: 20px;
+        }
+        h1 {
+            color: #333;
+        }
+        label {
+            margin-right: 10px;
+            font-size: 16px;
+        }
+        input[type="number"] {
+            padding: 10px;
+            margin: 5px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            width: 200px;
+        }
+        button {
+            background-color: #28a745;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+        button:hover {
+            background-color: #218838;
+        }
+        #resultado {
+            margin-top: 20px;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            background-color: #fff;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+    </style>
+</head>
+<body>
+    <h1>Intercambiar Valores de Variables</h1>
+    
+    <label for="var1">Valor de la primera variable:</label>
+    <input type="number" id="var1" placeholder="Ingrese valor para Variable 1">
+    
+    <label for="var2">Valor de la segunda variable:</label>
+    <input type="number" id="var2" placeholder="Ingrese valor para Variable 2">
+    
+    <button onclick="intercambiarValores()">Intercambiar</button>
+    
+    <div id="resultado"></div>
+    
+    <script>
+        function intercambiarValores() {
+            // Obtener los valores de las entradas
+            let var1 = document.getElementById('var1').value;
+            let var2 = document.getElementById('var2').value;
+            
+            // Intercambiar los valores
+            document.getElementById('var1').value = var2;
+            document.getElementById('var2').value = var1;
+        }
+    </script>
+</body>
+</html>

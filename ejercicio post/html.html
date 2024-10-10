@@ -1,0 +1,31 @@
+<body>
+    <h1>Probando mi uso de Fetch</h1>
+    <div id="resultado"></div>
+  
+    <script>
+      const url = 'https://jsonplaceholder.typicode.com/posts';
+  
+      const datosDelPost = {
+        title: 'Mi primer ejemplo',
+        body: 'Este es el contenido del post',
+        userId: 1
+      };
+  
+      fetch(url, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(datosDelPost)
+      })
+      .then(respuesta => respuesta.json())
+      .then(datos => {
+        // Mostramos los datos en la página
+        document.getElementById('resultado').textContent = JSON.stringify(datos);
+      })
+      .catch(error => {
+        console.error('Hubo un error en la solicitud:', error);
+      });
+    </script>
+  </body>
+  

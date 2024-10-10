@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora Simple</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            background-color: #f8f9fa;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            flex-direction: column;
+        }
+        .result {
+            margin-top: 20px;
+            font-size: 1.5em;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Calculadora Simple</h1>
+    <div class="form-group">
+        <input type="number" id="numero1" class="form-control" placeholder="Número 1" required>
+        <input type="number" id="numero2" class="form-control mt-2" placeholder="Número 2" required>
+    </div>
+    
+    <div>
+        <button class="btn btn-success" onclick="sumar()">Sumar</button>
+        <button class="btn btn-danger" onclick="restar()">Restar</button>
+        <button class="btn btn-secondary" onclick="limpiar()">Limpiar</button>
+    </div>
+    
+    <div class="result" id="resultado"></div>
+
+    <script>
+        function sumar() {
+            const num1 = parseFloat(document.getElementById("numero1").value);
+            const num2 = parseFloat(document.getElementById("numero2").value);
+            const resultado = num1 + num2;
+            document.getElementById("resultado").innerText = "Resultado: " + resultado;
+        }
+
+        function restar() {
+            const num1 = parseFloat(document.getElementById("numero1").value);
+            const num2 = parseFloat(document.getElementById("numero2").value);
+            const resultado = num1 - num2;
+            document.getElementById("resultado").innerText = "Resultado: " + resultado;
+        }
+
+        function limpiar() {
+            document.getElementById("numero1").value = '';
+            document.getElementById("numero2").value = '';
+            document.getElementById("resultado").innerText = '';
+        }
+    </script>
+
+</body>
+</html>

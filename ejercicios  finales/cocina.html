@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cálculo de Ingredientes</title>
+</head>
+<body>
+    <h1>Cálculo de Ingredientes para Tortilla de Patatas</h1>
+    <label for="comensales">Número de comensales:</label>
+    <input type="number" id="comensales" placeholder="Ingrese el número de comensales">
+    <button onclick="calcularIngredientes()">Calcular</button>
+
+    <div id="resultado" style="margin-top: 20px;"></div>
+
+    <script>
+        function calcularIngredientes() {
+            const comensales = document.getElementById('comensales').value;
+            
+            // Cálculos
+            const patatas = comensales * 200; // gramos de patatas
+            const kilosPatatas = patatas / 1000; // conversión a kilos
+            const huevos = kilosPatatas * 5; // huevos necesarios
+            const cebolla = kilosPatatas * 300; // gramos de cebolla
+
+            // Mostrar resultado
+            document.getElementById('resultado').innerHTML = `
+                <p>Para ${comensales} comensales necesitas:</p>
+                <ul>
+                    <li>${patatas} gramos de patatas (${kilosPatatas.toFixed(2)} kg)</li>
+                    <li>${huevos.toFixed(2)} huevos</li>
+                    <li>${cebolla.toFixed(2)} gramos de cebolla</li>
+                </ul>
+            `;
+        }
+    </script>
+</body>
+</html>

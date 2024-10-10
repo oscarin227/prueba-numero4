@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carrito de Compras</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Carrito de Compras</h1>
+
+    <!-- Lista de productos -->
+    <div id="lista-productos">
+        <button onclick="mostrarProducto(1)">Mostrar Manzana</button>
+        <button onclick="mostrarProducto(2)">Mostrar Pan</button>
+        <button onclick="mostrarProducto(3)">Mostrar Leche</button>
+    </div>
+
+    <!-- Detalles del producto seleccionado -->
+    <div id="producto-detalle">
+        <img id="producto-imagen" src="" alt="Imagen del producto">
+        <h2 id="producto-nombre"></h2>
+        <p id="producto-descripcion"></p>
+        <p id="producto-precio"></p>
+    </div>
+
+    <!-- Carrito de compras -->
+    <h2>Carrito</h2>
+    <ul id="carrito-lista"></ul>
+    <p>Total: $<span id="total"></span></p>
+
+    <!-- Botones de acción -->
+    <button onclick="vaciarCarrito()">Vaciar Carrito</button>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+  < head>
+     <title>Pagina Tomasthe magnific</title>
+   </head>
+    <body>
+      <h1>Mi primer pagina web</h1>
+       <p>Hola Mundo</p>
+
+       </body>
+      </html>
+
+
+
+

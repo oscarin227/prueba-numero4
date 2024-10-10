@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="stylos.css">
+    <title>Proyecto</title>
+</head>
+<body>
+    <header>
+        <h1>TIENDA PATITO LOCO</h1>
+    </header>
+    <nav>
+        <a href="#">NOSOTROS</a>
+        <a href="#">PEDIDOS</a>
+        <a href="#">CONTACTOS</a>
+    </nav>
+    <div class="tarjeta-contenedor">
+        <div class="tarjeta">
+            <h2>COMPUTADORA </h2>
+            <img src="imagen/computadora.jpg" alt="">
+            <p>Es la mejor computadora del mercado.</p>
+        </div>
+        <div class="tarjeta">
+            <h2>LENTES</h2>
+            <img src="imagen/lentes.jpg" alt="">
+            <p>Es la mejor lente de realidad virtual del mercado.</p>
+        </div>
+        <div class="tarjeta">
+            <h2>MOUSE</h2>
+            <img src="imagen/mouse.jpg" alt="">
+            <p>Es el mejor mouse del mercado, dentro de nuestro país y el extranjero.</p>
+
+        </div>
+        <div class="tarjeta">
+            <h2>MOUSE</h2>
+            <img src="imagen/teclado.jpg" alt="">
+            <p>Es el mejor mouse del mercado, dentro de nuestro país y el extranjero.</p>
+            
+        </div>
+    </div>
+</body>
+</html>
+------------------------------------------CODIGO PAGUINA PATITO----------------------------------
+CODIGO CSS DE PATITO
+
+body {
+    background-color: rgb(101, 155, 39);
+    margin: 0;
+    padding-top: 0px;
+}
+header{
+    padding-top: 0px;
+    height: ;
+    text-align: center;
+    color: rgb(5, 5, 5);
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    
+}
+nav{
+    background-color: white;
+    height: 25px;
+}
+nav a {
+    color: chocolate;
+    padding-left: 20px;
+    text-decoration: none;
+    vertical-align: middle;
+}
+
+
+nav a:hover{
+    color: blue;
+}
+.tarjeta{
+    text-align: center;
+    width: 22%;
+    border:  1px solid white;
+    border-radius: 25px;
+    padding: 10px;
+    background-color:blueviolet;
+    box-shadow: o 2px 5px rgba(138, 34, 34, 0.5);
+    margin: 5px;
+    
+}
+
+@media (max-width : 1090px){
+    .tarjeta{
+        width: 30%;
+    }
+}
+@media(max-width: 920px){
+    .tarjeta{
+        width: 46%;
+    }
+}
+@media(max-width: 820px){
+    .tarjeta{
+        width: 98%;
+    }
+}
+
+.tarjeta img{
+    width: 50%;
+    
+}
+.tarjeta-contenedor{
+    display: flex;
+    padding: 20px;
+    flex-wrap: wrap;
+    
+
+}
+

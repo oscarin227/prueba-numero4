@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Números Pares</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        ul {
+            list-style-type: none; /* Quitar viñetas */
+            padding: 0; /* Sin relleno */
+        }
+    </style>
+</head>
+<body>
+    <h1>Números Pares</h1>
+    <p>Haz clic en el botón para mostrar los números pares del array:</p>
+    
+    <!-- Botón para imprimir los números pares -->
+    <button id="mostrarPares">Mostrar Números Pares</button>
+    
+    <!-- Botón para limpiar la lista -->
+    <button id="limpiarLista">Limpiar Lista</button>
+    
+    <ul id="listaPares"></ul> <!-- Aquí aparecerán los números pares -->
+
+    <script>
+        // Array de ejemplo con números
+        const numeros = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 12,14,16,18,20,21,22,23,24,25,26,27,28,29,30];
+
+        // Función que toma un array de números y devuelve un nuevo array con los números pares
+        function obtenerNumerosPares(numeros) {
+            let pares = []; // Creamos un array vacío para almacenar los números pares  
+            for (let numero of numeros) {
+                if (numero % 2 === 0) { // Si el número es divisible por 2, es par
+                    pares.push(numero); // Lo agregamos al array de pares
+                }
+            }
+            return pares; // Devolvemos el array con los números pares
+        }
+
+        // Referencia al elemento <ul> donde mostraremos los números pares
+        const listaPares = document.getElementById("listaPares");
+
+        // Función para mostrar los números pares
+        function mostrarNumerosPares() {
+            // Limpiamos la lista antes de mostrar los pares
+            listaPares.innerHTML = '';
+
+            // Obtenemos los números pares
+            const numerosPares = obtenerNumerosPares(numeros);
+
+            // Usamos for...of para recorrer los números pares y mostrarlos
+            for (let numero of numerosPares) {
+                let listItem = document.createElement("li"); // Creamos un nuevo elemento <li>
+                listItem.textContent = numero; // Asignamos el número par al contenido del <li>
+                listaPares.appendChild(listItem); // Añadimos el <li> al <ul>
+            }
+        }
+
+        // Función para limpiar la lista de números pares
+        function limpiarLista() {
+            listaPares.innerHTML = ''; // Limpia todo el contenido de la lista <ul>
+        }
+
+        // Añadir eventos a los botones
+        document.getElementById("mostrarPares").addEventListener("click", mostrarNumerosPares);
+        document.getElementById("limpiarLista").addEventListener("click", limpiarLista);
+    </script>
+</body>
+</html>

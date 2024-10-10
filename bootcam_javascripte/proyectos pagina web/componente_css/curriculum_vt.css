@@ -1,0 +1,63 @@
+/* curriculum_vt.css */
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 10px;
+    padding: 0;
+}
+h1 {
+    color: #0d2c6e;
+    text-align: center;
+}
+.section {
+    margin-bottom: 20px;
+}
+.section h2 {
+    color: #0805b1;
+    font-size: 1.2em;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 5px;
+    margin-bottom: 10px;
+}
+.section p {
+    margin-bottom: 10px;
+}
+
+/* Estilo para el nombre en azul */
+.nombre {
+    color: blue;
+}
+
+.datos-personales {
+    background-color: #a3aeeb; /* Color plomo - puedes ajustar el tono (#ccc es un gris claro) */
+    padding: 20px; /* Espacio interno para separar el contenido del borde */
+    border-radius: 10px; /* Esquinas redondeadas para el contenedor */
+    margin-bottom: 20px; /* Espacio inferior para separar esta sección de las siguientes */
+}
+header {
+    background-color: #16dfdf; /* Color de fondo del encabezado */
+    padding: 10px; /* Espaciado interno */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra ligera */
+}
+
+nav ul {
+    list-style-type: none; /* Quita los puntos de lista */
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline-block; /* Mostrar elementos en línea */
+    margin-right: 20px; /* Espacio entre elementos del menú */
+}
+
+nav ul li a {
+    text-decoration: none; /* Quitar subrayado de los enlaces */
+    color: #db2c35; /* Color de texto de los enlaces */
+    font-weight: bold; /* Texto en negrita */
+}
+
+nav ul li a:hover {
+    color: #007bff; /* Cambiar color al pasar el ratón */
+}

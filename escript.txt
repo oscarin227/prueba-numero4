@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Star Wars Characters</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="ranges">
+            <div class="range" data-range="1-5">1 - 5</div>
+            <div class="range" data-range="6-11">6 - 11</div>
+            <div class="range" data-range="12-17">12 - 17</div>
+        </div>
+        <div class="characters" id="characters"></div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
+Código generado por IA. Revisar y usar cuidadosamente. Más información sobre preguntas frecuentes.
+Estilos CSS:
+CSS
+
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #f0f0f0;
+}
+.container {
+    display: flex;
+}
+.ranges {
+    margin-right: 20px;
+}
+.range {
+    padding: 10px;
+    background-color: #ddd;
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+.characters {
+    display: flex;
+    flex-direction: column;
+}
+.character {
+    padding: 10px;
+    background-color: #fff;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+}
+Código generado por IA. Revisar y usar cuidadosamente. Más información sobre preguntas frecuentes.
+Paso 2: Lógica JavaScript
+Captura de eventos y fetch:
+JavaScript
+
+document.addEventListener('DOMContentLoaded', () => {
+    const ranges = document.querySelectorAll('.range');
+    const charactersContainer = document.getElementById('characters');
+
+    ranges.forEach(range => {
+        range.addEventListener('mouseenter', () => {
+            const rangeValues = range.getAttribute('data-range').split('-');
+            const start = parseInt(rangeValues);
+            const end = parseInt(rangeValues);
+            fetchCharacters(start, end);
+        });
+    });
+});
+
+async function fetchCharacters(start, end) {
+    const charactersContainer = document.getElementById('characters');
+    charactersContainer.innerHTML = ''; // Limpiar contenedor
+
+    for (let i = start; i <= end; i++) {
+        const response = await fetch(`https://swapi.dev/api/people/${i}/`);
+        const character = await response.json();
+        displayCharacter(character);
+    }
+}
+
+function displayCharacter(character) {
+    const charactersContainer = document.getElementById('characters');
+    const characterDiv = document.createElement('div');
+    characterDiv.classList.add('character');
+    characterDiv.innerHTML = `
+        <h3>${character.name}</h3>
+        <p>Altura: ${character.height} cm</p>
+        <p>Peso: ${character.mass} kg</p>
+    `;
+    charactersContainer.appendChild(characterDiv);
+}
+Código generado por IA. Revisar y usar cuidadosamente. Más información sobre preguntas frecuentes.
+Paso 3: Pruebas y Mejoras
+Prueba la aplicación: Abre index.html en tu navegador y verifica que al pasar el mouse sobre los rangos, se muestren los personajes correspondientes.
+Mejoras opcionales:
+Añadir animaciones: Puedes usar CSS para añadir transiciones suaves.
+Uso de jQuery: Si prefieres, puedes usar jQuery para manejar eventos y manipular el DOM.
+Si tienes alguna duda o necesitas más detalles en algún paso, ¡házmelo saber!
+
+Más información
+
+1
+github.com
+2
+github.com
+
+-------------------------------------------------------------------
+character {
+    padding: 10px;
+    background-color: #fff;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.character.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+Código generado por IA. Revisar y usar cuidadosamente. Más información sobre preguntas frecuentes.
+Actualiza tu JavaScript para añadir la clase show después de que el elemento se haya añadido al DOM:
+JavaScript
+
+function displayCharacter(character) {
+    const charactersContainer = document.getElementById('characters');
+    const characterDiv = document.createElement('div');
+    characterDiv.classList.add('character');
+    characterDiv.innerHTML = `
+        <h3>${character.name}</h3>
+        <p>Altura: ${character.height} cm</p>
+        <p>Peso: ${character.mass} kg</p>
+    `;
+    charactersContainer.appendChild(characterDiv);
+
+    // Añadir la clase 'show' después de un pequeño retraso para activar la animación
+    setTimeout(() => {
+        characterDiv.classList.add('show');
+    }, 100);
+}
+Código generado por IA. Revisar y usar cuidadosamente. Más información sobre preguntas frecuentes.
+Paso 2: Añadir Efecto Hover a los Rangos
+Vamos a añadir un efecto hover a los elementos .range para que cambien de color cuando el usuario pase el mouse sobre ellos.
+
+Actualiza tu CSS:
+CSS
+
+.range {
+    padding: 10px;
+    background-color: #ddd;
+    margin-bottom: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.range:hover {
+    background-color: #bbb;
+}
+Código generado por IA. Revisar y usar cuidadosamente. Más información sobre preguntas frecuentes.
+Paso 3: Añadir Animaciones de Entrada
+Podemos añadir una animación de entrada para los bloques de personajes utilizando @keyframes.
+
+Actualiza tu CSS:
+CSS
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.character {
+    padding: 10px;
+    background-color: #fff;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    animation: fadeInUp 0.5s ease forwards;
+}
+Código generado por IA. Revisar y usar cuidadosamente. Más información sobre preguntas frecuentes.
+Con estos cambios, tu aplicación tendrá transiciones suaves y animaciones que mejorarán la experiencia del usuario. Si necesitas más ayuda o quieres añadir otro tipo de animaci
+

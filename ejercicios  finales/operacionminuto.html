@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conversión de Tiempo a Segundos</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f1f8e9; /* Fondo verde claro */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 0;
+            padding: 20px;
+        }
+        h1 {
+            color: #33691e; /* Color verde oscuro */
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
+        }
+        label {
+            margin-right: 10px;
+            font-size: 18px;
+            color: #2c6b1f; /* Color verde más oscuro */
+        }
+        input[type="number"] {
+            padding: 12px;
+            margin: 5px;
+            font-size: 18px;
+            border: 2px solid #2c6b1f; /* Color verde oscuro */
+            border-radius: 8px;
+            width: 200px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        button {
+            background-color: #4caf50; /* Color verde brillante */
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            font-size: 18px;
+            border-radius: 8px;
+            cursor: pointer;
+            margin-top: 10px;
+            transition: background-color 0.3s ease;
+        }
+        button:hover {
+            background-color: #388e3c; /* Color verde oscuro al pasar el ratón */
+        }
+        #resultado {
+            margin-top: 20px;
+            padding: 15px;
+            border: 2px solid #2c6b1f; /* Color verde oscuro */
+            border-radius: 8px;
+            background-color: #ffffff; /* Fondo blanco */
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            text-align: center;
+            color: #2c6b1f; /* Color verde más oscuro */
+        }
+        p {
+            margin: 10px 0;
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Conversión de Tiempo a Segundos</h1>
+    
+    <label for="horas">Número de horas:</label>
+    <input type="number" id="horas" placeholder="Ingrese horas" step="0.1">
+    
+    <label for="minutos">Número de minutos:</label>
+    <input type="number" id="minutos" placeholder="Ingrese minutos" step="0.1">
+    
+    <button onclick="convertirATiempo()">Convertir a Segundos</button>
+    
+    <div id="resultado"></div>
+    
+    <script>
+        function convertirATiempo() {
+            // Obtener los valores de los inputs
+            let horas = parseFloat(document.getElementById('horas').value);
+            let minutos = parseFloat(document.getElementById('minutos').value);
+            
+            // Validar que los valores sean positivos
+            if (horas < 0 || minutos < 0) {
+                document.getElementById('resultado').innerHTML = "Por favor, ingrese valores positivos.";
+                return;
+            }
+            
+            // Calcular el total en segundos
+            let segundos = (horas * 3600) + (minutos * 60);
+            
+            // Mostrar el resultado
+            document.getElementById('resultado').innerHTML = `
+                <p>Tiempo total en segundos: ${segundos}</p>
+            `;
+        }
+    </script>
+</body>
+</html>

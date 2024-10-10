@@ -1,0 +1,31 @@
+function menu() {
+    let opcion = parseInt(document.getElementById('input1').value);
+    let divMostrar = document.getElementById('div-mostrar');
+ 
+    if (isNaN(opcion)) {
+        alert('Por favor, ingrese una opción válida.');
+        return;
+    }
+ 
+    switch (opcion) {
+        case 1:
+            divMostrar.innerHTML = '<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTYqkoIML2eW2P_c1ApG6ZXgHE1K5Q2Tu3j0Q&s" alt="Imagen" class="img-fluid">';
+            break;
+        case 2:
+            divMostrar.innerHTML = '<iframe width="560" height="315" src="https://www.youtube.com/embed/3VZFpwlXKpg?si=RBGwnv48xzVYE2hY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>';
+            break;
+        case 3:
+           
+            break;
+        case 4:
+           
+            break;
+        case 5:
+            alert("Saliendo de la app");
+            break;
+        default:
+            alert('Por favor, ingrese una opción válida (1-5).');
+    }
+}
+ 
+document.getElementById('btn-enviar').addEventListener('click', menu);

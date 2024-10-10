@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comparar Números</title>
+</head>
+<body>
+    <h2>Comparar tres Números</h2>
+    <label>Primer número: <input type="number" id="numero1"></label><br><br>
+    <label>Segundo número: <input type="number" id="numero2"></label><br><br>
+    <label>Tercer número: <input type="number" id="numero3"></label><br><br>
+
+    <button onclick="compararNumeros()">Comparar</button>
+    <button onclick="borrarOperaciones()">Borrar</button>
+
+    <p id="resultado"></p>
+
+    <script>
+        function compararNumeros() {
+            let n1 = parseFloat(document.getElementById("numero1").value);
+            let n2 = parseFloat(document.getElementById("numero2").value);
+            let n3 = parseFloat(document.getElementById("numero3").value);
+            let res = document.getElementById("resultado");
+
+            if (isNaN(n1) || isNaN(n2) || isNaN(n3)) {
+                res.innerText = "Por favor, ingresa números válidos.";
+                return;
+            }
+
+            let mayor = Math.max(n1, n2, n3);
+            let mensaje = `El número mayor es: ${mayor}.`;
+
+            if (n1 === n2 && n2 === n3) {
+                mensaje = `Todos los números son iguales (${n1}).`;
+            }
+
+            res.innerText = mensaje;
+        }
+
+        function borrarOperaciones() {
+            document.getElementById("numero1").value = '';
+            document.getElementById("numero2").value = '';
+            document.getElementById("numero3").value = '';
+            document.getElementById("resultado").innerText = '';
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,111 @@
+/* styles.css */
+
+body {
+    font-family: "arial", sans-serif;
+    margin: 90;
+    padding: 70%;
+    box-sizing: border-box;
+}
+
+header {
+    background-color: #390757;
+    color: red;
+    padding: 1em 0;
+    text-align: center;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 10px;
+}
+
+nav ul li a {
+    color: rgb(6, 158, 6);
+
+-decoration: none;
+}
+
+section {
+    padding: 20px;
+}
+
+.producto {
+    border: 1px solid #40055c;
+    padding: 10px;
+    margin: 10px 0;
+}
+
+.producto img {
+    width: 100%;
+    height: auto;
+}
+
+footer {
+    background-color: #333;
+    color: rgb(27, 12, 110);
+    text-align: center;
+    padding: 10px 0;
+}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tienda de Ropa y Trajes para Eventos</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Tienda de Ropa y Trajes para Eventos</h1>
+        <nav>
+            <ul>
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#ropa">Ropa</a></li>
+                <li><a href="#trajes">Trajes</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <section id="inicio">
+        <h2>Bienvenidos a Nuestra Tienda</h2>
+        <p>Ofrecemos una amplia variedad de ropa y trajes para todo tipo de eventos.</p>
+    </section>
+    
+    <section id="ropa">
+        <h2>Ropa</h2>
+        <div class="producto">
+            <img src="ruta/de/imagen1.jpg" alt="Descripción de la prenda">
+            <h3>Prenda 1</h3>
+            <p>Descripción de la prenda 1.</p>
+            <p>Precio: $XX.XX</p>
+        </div>
+        <!-- Más productos -->
+    </section>
+    
+    <section id="trajes">
+        <h2>Trajes</h2>
+        <div class="producto">
+            <img src="ruta/de/imagen2.jpg" alt="Descripción del traje">
+            <h3>Traje 1</h3>
+            <p>Descripción del traje 1.</p>
+            <p>Precio: $XX.XX</p>
+        </div>
+        <!-- Más productos -->
+    </section>
+    
+    <section id="contacto">
+        <h2>Contacto</h2>
+        <p>Para más información, contáctenos en: <a href="mailto:info@tiendaropa.com">info@tiendaropa.com</a></p>
+    </section>
+    
+    <footer>
+        <p>&copy; 2024 Tienda de Ropa y Trajes para Eventos. Todos los derechos reservados.</p>
+    </footer>
+</body>
+</html>

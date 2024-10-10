@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menú de Opciones</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        button {
+            margin: 5px 0;
+            padding: 10px;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+    <h2>Menú de Opciones</h2>
+    <button onclick="mostrarOpcion(1)">Opción 1: Ir a la playa</button>
+    <button onclick="mostrarOpcion(2)">Opción 2: Jugaré hoy fútbol</button>
+    <button onclick="mostrarOpcion(3)">Opción 3: Viajaré en avión</button>
+    <button onclick="mostrarOpcion(4)">Opción 4: Voy al supermercado</button>
+    <button onclick="salir()">Salir</button>
+
+    <p id="resultado"></p>
+
+    <script>
+        function mostrarOpcion(opcion) {
+            let mensaje;
+            switch (opcion) {
+                case 1:
+                    mensaje = "Voy a la playa.";
+                    break;
+                case 2:
+                    mensaje = "Jugaré hoy fútbol.";
+                    break;
+                case 3:
+                    mensaje = "Viajaré en avión.";
+                    break;
+                case 4:
+                    mensaje = "Voy al supermercado.";
+                    break;
+                default:
+                    mensaje = "Opción no válida.";
+            }
+            document.getElementById("resultado").innerText = mensaje;
+        }
+
+        function salir() {
+            if (confirm("¿Estás seguro de que deseas salir?")) {
+                window.close(); // Cierra la ventana si es posible
+            }
+        }
+    </script>
+</body>
+</html>

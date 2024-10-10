@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tienda de Comida Peruana</title>
+    <!-- Enlace a Bootstrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Header -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="#">Tienda Peruana</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Inicio</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Productos</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Contacto</a>
+                </li>
+                <li class="nav-item">
+                    <a class="btn btn-warning" href="#" data-toggle="modal" data-target="#cartModal">Carrito</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Contenido Principal -->
+    <div class="container mt-5">
+        <h2 class="text-center">Productos Disponibles</h2>
+        <div class="row mt-4">
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <img src="imagenes/lomosaltado.jpg" class="card-img-top" alt="Lomo Saltado">
+                    <div class="card-body text-center">
+                        <h5 class="card-title">Lomo Saltado</h5>
+                        <p class="card-text">Precio: $175.00</p>
+                        <button class="btn btn-success add-to-cart" data-title="Lomo Saltado" data-price="175.00">Agregar al carrito</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <img src="imagenes/anticuchoperuano.jpg" class="card-img-top" alt="Anticucho">
+                    <div class="card-body text-center">
+                        <h5 class="card-title">Anticucho</h5>
+                        <p class="card-text">Precio: $160.00</p>
+                        <button class="btn btn-success add-to-cart" data-title="Anticucho" data-price="160.00">Agregar al carrito</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <img src="imagenes/ajiamarillo.jpg" class="card-img-top" alt="Ají Amarillo">
+                    <div class="card-body text-center">
+                        <h5 class="card-title">Ají Amarillo</h5>
+                        <p class="card-text">Precio: $65.00</p>
+                        <button class="btn btn-success add-to-cart" data-title="Ají Amarillo" data-price="65.00">Agregar al carrito</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Carrito Modal -->
+    <div class="modal fade" id="cartModal" tabindex="-1" role="dialog" aria-labelledby="cartModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="cartModalLabel">Carrito de Compras</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <table class="table">
+              <thead>
+                <tr>
+                  <th>Producto</th>
+                  <th>Cantidad</th>
+                  <th>Precio</th>
+                  <th>Acciones</th>
+                </tr>
+              </thead>
+              <tbody id="cartItems">
+                <!-- Items del carrito se agregarán aquí -->
+              </tbody>
+            </table>
+            <div id="cartSummary" class="mt-3">
+              <p>Total de productos: <span id="totalQuantity">0</span></p>
+              <p>Total de precios: $<span id="totalPrice">0.00</span></p>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-danger" id="clearCart">Limpiar carrito</button>
+            <button type="button" class="btn btn-primary" id="calculateTotal">Calcular Total</button>
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Enlace a jQuery, Popper.js y JavaScript de Bootstrap -->
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <!-- Enlace al archivo JavaScript -->
+    <script src="scripts.js"></script>
+</body>
+</html>

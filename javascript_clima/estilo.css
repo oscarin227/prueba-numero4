@@ -1,0 +1,22 @@
+body {
+    font-family: Arial, sans-serif;
+}
+
+h1 {
+    text-align: center;
+}
+
+#holidaysTable {
+    width: 80%;
+    margin: 20px auto;
+    border-collapse: collapse;
+}
+
+#holidaysTable th, #holidaysTable td {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+#holidaysTable th {
+    background-color: #f2f2f2;
+}

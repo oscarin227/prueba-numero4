@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Productos con Carrito de Compras</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!-- Cargar jQuery desde un CDN -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <style>
+        .precio {
+            color: green;
+        }
+        .total {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h2>Seleccionar Productos</h2>
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>Código</th>
+                    <th>Nombre</th>
+                    <th>Precio</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td>1001</td><td>Producto A</td><td>$10,000</td></tr>
+                <tr><td>2002</td><td>Producto B</td><td>$28,000</td></tr>
+                <tr><td>3003</td><td>Producto C</td><td>$60,000</td></tr>
+                <tr><td>4004</td><td>Producto D</td><td>$400,000</td></tr>
+                <tr><td>5005</td><td>Producto E</td><td>$50,000</td></tr>
+                <tr><td>6006</td><td>Producto F</td><td>$65,600</td></tr>
+                <tr><td>7007</td><td>Producto G</td><td>$70,000</td></tr>
+                <tr><td>8008</td><td>Producto H</td><td>$478,000</td></tr>
+                <tr><td>9009</td><td>Producto I</td><td>$90,000</td></tr>
+            </tbody>
+        </table>
+
+        <h3>Seleccionar Producto por Código</h3>
+        <input type="text" id="codigoProducto" class="form-control" placeholder="Ingresa el código">
+        <button class="btn btn-primary mt-2" id="agregarProductoBtn">Agregar Producto</button>
+        <button class="btn btn-danger mt-2" id="limpiarProductosBtn">Limpiar Productos</button>
+
+        <h3>Productos Seleccionados</h3>
+        <table class="table table-bordered" id="productosSeleccionados">
+            <thead>
+                <tr>
+                    <th>Nombre</th>
+                    <th>Precio</th>
+                    <th>Cantidad</th>
+                    <th>Total</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+        
+        <h3>Total a Pagar: <span id="total" class="total">$0</span></h3>
+    </div>
+
+    <script>
+        class Producto {
+            constructor(codigo, nombre, precio) {
+                this.codigo = codigo;
+                this.nombre = nombre;
+                this.precio = precio;
+            }
+        }
+
+        class Carrito {
+            constructor() {
+                this.productos = [];
+            }
+
+            agregarProducto(producto, cantidad) {
+                this.productos.push({ ...producto, cantidad: cantidad });
+            }
+
+            calcularTotal() {
+                return this.productos.reduce((total, producto) => total + (producto.precio * producto.cantidad), 0);
+            }
+
+            limpiar() {
+                this.productos = [];
+            }
+        }
+
+        const productos = [
+            new Producto(1001, "televisor", 10000),
+            new Producto(2002, "equipo de videos", 28000),
+            new Producto(3003, "memoria ram", 60000),
+            new Producto(4004, "smart tv", 400000),
+            new Producto(5005, "reloj pulsera", 50000),
+            new Producto(6006, "equipo musical", 65600),
+            new Producto(7007, "impresora", 70000),
+            new Producto(8008, "cables coaxiales", 478000),
+            new Producto(9009, "pantallas digitales", 90000),
+        ];
+
+        const carrito = new Carrito();
+
+        function actualizarTabla() {
+            const tbody = $('#productosSeleccionados tbody');
+            tbody.empty();
+
+            carrito.productos.forEach(producto => {
+                tbody.append(`<tr>
+                    <td>${producto.nombre}</td>
+                    <td class="precio">$${producto.precio.toLocaleString()}</td>
+                    <td>${producto.cantidad}</td>
+                    <td>$${(producto.precio * producto.cantidad).toLocaleString()}</td>
+                </tr>`);
+            });
+
+            $('#total').text(`$${carrito.calcularTotal().toLocaleString()}`);
+        }
+
+        $('#agregarProductoBtn').click(() => {
+            const codigo = parseInt($('#codigoProducto').val());
+            const producto = productos.find(p => p.codigo === codigo);
+            if (producto) {
+                const cantidad = parseInt(prompt("¿Cuántos desea comprar?", 1));
+                if (cantidad > 0) {
+                    carrito.agregarProducto(producto, cantidad);
+                    actualizarTabla();
+                    $('#codigoProducto').val('');
+                } else {
+                    alert("Por favor, ingrese una cantidad válida.");
+                }
+            } else {
+                alert("Código no válido.");
+            }
+        });
+
+        $('#limpiarProductosBtn').click(() => {
+            carrito.limpiar();
+            actualizarTabla();
+            $('#total').text('$0');
+            $('#codigoProducto').val('');
+        });
+    </script>
+</body>
+</html>

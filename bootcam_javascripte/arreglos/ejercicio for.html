@@ -1,0 +1,71 @@
+<!<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menú Switch Simplificado</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+</head>
+<body>
+
+    <div class="container mt-5">
+        <h2 class="text-center">Menú Simplificado</h2>
+        <div class="col-md-4 mx-auto">
+            <ol id="product-list" class="list-group list-group-numbered">
+                <!-- Lista generada por JavaScript -->
+            </ol>
+            <input type="number" class="form-control my-3" id="input1" placeholder="Ingrese su opción">
+            <button class="btn btn-success w-100" id="btn-enviar">Enviar</button>
+            <div id="div-mostrar" class="border border-2 mt-3"></div>
+        </div>
+    </div>
+
+    <script>
+        const productos = [
+            "Ver una imagen",
+            "Reproducir un video",
+            "Reproducir un audio",
+            "Redirigir a una web",
+            "Producto Extra 1",
+            "Producto Extra 2",
+            "Producto Extra 3"
+        ];
+
+        // Crear la lista de productos
+        const lista = document.getElementById('product-list');
+        productos.forEach(producto => {
+            lista.innerHTML += `<li class="list-group-item list-group-item-custom">${producto}</li>`;
+        });
+
+        // Funcionalidad del botón "Enviar"
+        document.getElementById('btn-enviar').addEventListener('click', () => {
+            const opcion = parseInt(document.getElementById('input1').value);
+            const divMostrar = document.getElementById('div-mostrar');
+            divMostrar.innerHTML = '';
+
+            switch(opcion) {
+                case 1:
+                    divMostrar.innerHTML = '<img src="https://via.placeholder.com/600x400" alt="Imagen de ejemplo" class="img-fluid">';
+                    break;
+                case 2:
+                    divMostrar.innerHTML = '<iframe width="600" height="400" src="https://www.youtube.com/embed/Scxs7L0vhZ4" frameborder="0" allowfullscreen></iframe>';
+                    break;
+                case 3:
+                    divMostrar.innerHTML = '<audio controls><source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">Tu navegador no soporta el elemento de audio.</audio>';
+                    break;
+                case 4:
+                    window.location.href = 'https://www.ejemplo.com'; // Cambia esta URL a la página web deseada
+                    break;
+                case 5:
+                case 6:
+                case 7:
+                    divMostrar.innerHTML = `<p>${productos[opcion - 1]} seleccionado.</p>`;
+                    break;
+                default:
+                    divMostrar.innerHTML = '<p>Opción no válida, por favor intenta de nuevo.</p>';
+            }
+        });
+    </script>
+</body>
+</html>
+

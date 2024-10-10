@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de Figuras Geométricas</title>
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f1f8e9; /* Fondo verde claro */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 0;
+            padding: 20px;
+        }
+        h1 {
+            color: #388e3c; /* Color verde oscuro */
+        }
+        .tab {
+            display: flex;
+            margin-bottom: 10px;
+        }
+        .tab button {
+            background-color: #4caf50; /* Color verde brillante */
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            margin: 0 5px;
+            font-size: 18px;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+        .tab button.active {
+            background-color: #388e3c; /* Color verde oscuro */
+        }
+        .tab-content {
+            display: none;
+            text-align: center;
+        }
+        .tab-content.active {
+            display: block;
+        }
+        label {
+            margin-right: 10px;
+            font-size: 18px;
+            color: #2c6b1f; /* Color verde más oscuro */
+        }
+        input[type="number"] {
+            padding: 10px;
+            margin: 5px;
+            font-size: 18px;
+            border: 2px solid #2c6b1f; /* Color verde oscuro */
+            border-radius: 8px;
+            width: 200px;
+        }
+        button {
+            background-color: #4caf50; /* Color verde brillante */
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 18px;
+            border-radius: 8px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+        button:hover {
+            background-color: #388e3c; /* Color verde oscuro al pasar el ratón */
+        }
+        #resultado {
+            margin-top: 20px;
+            padding: 15px;
+            border: 2px solid #2c6b1f; /* Color verde oscuro */
+            border-radius: 8px;
+            background-color: #ffffff; /* Fondo blanco */
+        }
+        p {
+            margin: 10px 0;
+            font-size: 18px;
+        }
+        .figura {
+            margin: 20px 0;
+        }
+        .figura img {
+            max-width: 300px;
+            height: auto;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Calculadora de Figuras Geométricas</h1>
+    
+    <div class="tab">
+        <button class="tablinks" data-tab="cuadrado">Cuadrado</button>
+        <button class="tablinks" data-tab="triangulo">Triángulo</button>
+        <button class="tablinks" data-tab="rectangulo">Rectángulo</button>
+        <button class="tablinks" data-tab="circunferencia">Circunferencia</button>
+    </div>
+    
+    <!-- Cuadrado -->
+    <div id="cuadrado" class="tab-content">
+        <h2>Cuadrado</h2>
+        <label for="lado-cuadrado">Lado:</label>
+        <input type="number" id="lado-cuadrado" placeholder="Ingrese lado" step="0.01">
+        <button id="btn-cuadrado">Calcular</button>
+        <div id="resultado-cuadrado" class="figura"></div>
+        <img src="https://via.placeholder.com/300x200?text=Cuadrado" alt="Cuadrado">
+        <p>Área = Lado × Lado</p>
+        <p>Perímetro = 4 × Lado</p>
+    </div>
+    
+    <!-- Triángulo -->
+    <div id="triangulo" class="tab-content">
+        <h2>Triángulo</h2>
+        <label for="base-triangulo">Base:</label>
+        <input type="number" id="base-triangulo" placeholder="Ingrese base" step="0.01">
+        <label for="altura-triangulo">Altura:</label>
+        <input type="number" id="altura-triangulo" placeholder="Ingrese altura" step="0.01">
+        <button id="btn-triangulo">Calcular</button>
+        <div id="resultado-triangulo" class="figura"></div>
+        <img src="https://via.placeholder.com/300x200?text=Tri%C3%A1ngulo" alt="Triángulo">
+        <p>Área = (Base × Altura) / 2</p>
+        <p>Perímetro = Lado1 + Lado2 + Lado3</p>
+    </div>
+    
+    <!-- Rectángulo -->
+    <div id="rectangulo" class="tab-content">
+        <h2>Rectángulo</h2>
+        <label for="base-rectangulo">Base:</label>
+        <input type="number" id="base-rectangulo" placeholder="Ingrese base" step="0.01">
+        <label for="altura-rectangulo">Altura:</label>
+        <input type="number" id="altura-rectangulo" placeholder="Ingrese altura" step="0.01">
+        <button id="btn-rectangulo">Calcular</button>
+        <div id="resultado-rectangulo" class="figura"></div>
+        <img src="https://via.placeholder.com/300x200?text=Rect%C3%A1ngulo" alt="Rectángulo">
+        <p>Área = Base × Altura</p>
+        <p>Perímetro = 2 × (Base + Altura)</p>
+    </div>
+    
+    <!-- Circunferencia -->
+    <div id="circunferencia" class="tab-content">
+        <h2>Circunferencia</h2>
+        <label for="radio-circunferencia">Radio:</label>
+        <input type="number" id="radio-circunferencia" placeholder="Ingrese radio" step="0.01">
+        <button id="btn-circunferencia">Calcular</button>
+        <div id="resultado-circunferencia" class="figura"></div>
+        <img src="https://via.placeholder.com/300x200?text=Circunferencia" alt="Circunferencia">
+        <p>Área = π × Radio²</p>
+        <p>Perímetro = 2 × π × Radio</p>
+    </div>
+    
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            // Mostrar la primera pestaña por defecto
+            $(".tab-content:first").addClass("active");
+            $(".tab button:first").addClass("active");
+            
+            // Manejo de cambio de pestaña
+            $(".tab button").click(function() {
+                var tabId = $(this).data("tab");
+                $(".tab-content").removeClass("active");
+                $(".tab button").removeClass("active");
+                $("#" + tabId).addClass("active");
+                $(this).addClass("active");
+            });
+            
+            // Funciones de cálculo
+            function calcularCuadrado() {
+                var lado = parseFloat($("#lado-cuadrado").val());
+                if (lado <= 0) {
+                    $("#resultado-cuadrado").html("Por favor, ingrese un valor positivo.");
+                    return;
+                }
+                var area = lado * lado;
+                var perimetro = 4 * lado;
+                $("#resultado-cuadrado").html(`
+                    <p>Área del cuadrado: ${area.toFixed(2)}</p>
+                    <p>Perímetro del cuadrado: ${perimetro.toFixed(2)}</p>
+                `);
+            }
+
+            function calcularTriangulo() {
+                var base = parseFloat($("#base-triangulo").val());
+                var altura = parseFloat($("#altura-triangulo").val());
+                if (base <= 0 || altura <= 0) {
+                    $("#resultado-triangulo").html("Por favor, ingrese valores positivos.");
+                    return;
+                }
+                var area = (base * altura) / 2;
+                // Asumimos un triángulo equilátero para el perímetro como simplificación
+                var lado = Math.sqrt(Math.pow(base / 2, 2) + Math.pow(altura, 2));
+                var perimetro = 2 * lado + base;
+                $("#resultado-triangulo").html(`
+                    <p>Área del triángulo: ${area.toFixed(2)}</p>
+                    <p>Perímetro del triángulo (aproximado): ${perimetro.toFixed(2)}</p>
+                `);
+            }
+
+            function calcularRectangulo() {
+                var base = parseFloat($("#base-rectangulo").val());
+                var altura = parseFloat($("#altura-rectangulo").val());
+                if (base <= 0 || altura <= 0) {
+                    $("#resultado-rectangulo").html("Por favor, ingrese valores positivos.");
+                    return;
+                }
+                var area = base * altura;
+                var perimetro = 2 * (base + altura);
+                $("#resultado-rectangulo").html(`
+                    <p>Área del rectángulo: ${area.toFixed(2)}</p>
+                    <p>Perímetro del rectángulo: ${perimetro.toFixed(2)}</p>
+                `);
+            }
+
+            function calcularCircunferencia() {
+                var radio = parseFloat($("#radio-circunferencia").val());
+                if (radio <= 0) {
+                    $("#resultado-circunferencia").html("Por favor, ingrese un valor positivo.");
+                    return;
+                }
+                var pi = Math.PI;
+                var area = pi * Math.pow(radio, 2);
+                var perimetro = 2 * pi * radio;
+                $("#resultado-circunferencia").html(`
+                    <p>Área de la circunferencia: ${area.toFixed(2)}</p>
+                    <p>Perímetro de la circunferencia: ${perimetro.toFixed(2)}</p>
+                `);
+            }
+            
+            // Enlazar las funciones de cálculo con los botones
+            $("#btn-cuadrado").click(calcularCuadrado);
+            $("#btn-triangulo").click(calcularTriangulo);
+            $("#btn-rectangulo").click(calcularRectangulo);
+            $("#btn-circunferencia").click(calcularCircunferencia);
+        });
+    </script>
+</body>
+</html>

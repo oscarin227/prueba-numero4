@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Par o Impar</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 50px;
+        }
+        input, button {
+            padding: 10px;
+            margin: 5px;
+            font-size: 16px;
+        }
+        .resultado {
+            margin-top: 20px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <h1>Verificar Par o Impar</h1>
+    <input type="number" id="numero" placeholder="Ingresa un número">
+    <button onclick="verificar()">Verificar</button>
+    <div class="resultado" id="resultado"></div>
+
+    <script>
+        function verificar() {
+            const numero = document.getElementById('numero').value;
+            const resultado = numero % 2 ? 'Impar' : 'Par';
+            document.getElementById('resultado').textContent = `El número es ${resultado}`;
+        }
+    </script>
+</body>
+</html>

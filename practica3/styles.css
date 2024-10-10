@@ -1,0 +1,44 @@
+/* General */
+body {
+    background-color: white;
+    color: black;
+    font-family: Arial, sans-serif;
+}
+
+/* Tarjetas */
+.card {
+    border: 1px solid red;
+}
+
+.card-title {
+    color: red;
+}
+
+.card-text {
+    color: black;
+}
+
+/* Encabezados */
+h2 {
+    color: red;
+}
+
+/* Videos */
+iframe {
+    border: 1px solid red;
+}
+
+/* Pie de página */
+footer {
+    background-color: red;
+    color: white;
+}
+
+/* Enlaces */
+a {
+    color: red;
+}
+
+a:hover {
+    color: darkred;
+}

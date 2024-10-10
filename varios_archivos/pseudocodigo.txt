@@ -1,0 +1,23 @@
+INICIO
+
+    // Solicitar nombre y apellido
+    IMPRIMIR "Ingrese su nombre:"
+    LEER nombre
+    
+    IMPRIMIR "Ingrese su apellido:"
+    LEER apellido
+    
+    // Solicitar año de nacimiento
+    IMPRIMIR "Ingrese su año de nacimiento:"
+    LEER anio_nacimiento
+    
+    // Obtener el año actual
+    anio_actual = 2024  // Puedes actualizar este valor según el año en curso
+    
+    // Calcular la edad
+    edad = anio_actual - anio_nacimiento
+    
+    // Mostrar el resultado
+    IMPRIMIR "Hola, " + nombre + " " + apellido + ". Tienes " + edad + " años."
+    
+FIN
